@@ -1,16 +1,8 @@
-let myarray = [];
-function getRandomInt() {
-    return Math.floor(Math.random() * 10);
-}
+let arr = [1,2,3,4,5];
 
-function multiRand(n) {
-    let number
-    while (n-- != 0) {
-        number =  myarray.push(getRandomInt());
-    }
-    return number;
+let nbr=0, n=0;
+for (let i = 0; i < arr.length; i++) {
+    nbr += arr[i];
+    n = nbr/arr.length;
 }
-
-let n = 5;
-myarray.push(multiRand(n));
-console.log(myarray);
+console.log(n);

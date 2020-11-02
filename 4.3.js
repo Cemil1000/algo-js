@@ -1,8 +1,8 @@
+const readlineSync = require('readline-sync')
 let array = [];
 
 function rand10() {
-    let nbr = Math.floor(Math.random()*5);
-    return nbr;
+    return Math.floor(Math.random()*10+1);
 }
 function multiRand(n) {
     for (let i = 0; i < n; i++) {
@@ -11,6 +11,6 @@ function multiRand(n) {
     return array;
 }
 
-let n = 5;
+let n = readlineSync.question('Rentre le nombre de nombre aleatoires ');
 multiRand(n);
 console.log(array);
