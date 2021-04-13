@@ -1,17 +1,27 @@
-function fact(nbr){
-    let f = 1;
-    for(let i = 1; i <= nbr; i++)  
-    {
-      f *= i;
-    }  
-    console.log(f);
+const readlineSync = require('readline-sync')
+let array = [];
+
+function rand10() {
+    return Math.floor(Math.random()*10+1);
 }
-function faact(nrb) {
-    if (nrb === 0) {
-        return 1;
+function multiRand(n) {
+    for (let i = 0; i < n; i++) {
+        array.push(rand10());
     }
-    return nrb* faact(nrb-1);
+    return array;
+}
+function max(liste) {
+    let grandNombre = liste[0];
+
+    for (let nbr of liste) {
+      if (nbr > grandNombre) {
+        grandNombre = nbr;
+      }
+    }
+    return grandNombre;
 }
 
-fact(4);
-console.log(faact(5));
+let n = readlineSync.question('Rentre le nombre de nombre aleatoires ');
+multiRand(n);
+console.log(array);
+console.log(max(array));
